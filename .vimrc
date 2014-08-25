@@ -1,3 +1,5 @@
+let g:pathogen_disabled = ['vim-airline']
+hi StatusLine ctermfg=darkgreen
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
