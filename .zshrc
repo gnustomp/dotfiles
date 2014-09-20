@@ -5,11 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-if [ $TERM = "linux" ]; then
-	ZSH_THEME="gentoo"
-else
-ZSH_THEME="airline"
-fi
+ZSH_THEME="gentoo"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -77,11 +73,3 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-eval "./.base16-$BASE16_SCHEME.dark.sh"
-eval $(dircolors ~/.dircolors)
-
-if [[ $TERM = "linux" ]]; then startx; fi
