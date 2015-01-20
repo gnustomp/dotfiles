@@ -50,7 +50,7 @@ export PATH="$HOME/bin:$PATH"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man tmux)
+plugins=(git colored-man tmux zsh-syntax-highlighting history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 

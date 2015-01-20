@@ -1,11 +1,29 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+	branch = master
 
 [submodule "vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-	
+	branch = master
+
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
+	branch = master
+
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+	branch = master
+
+[submodule ".vim/bundle/tmuxline.vim"]
+	path = .vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
+	branch = master
+
+[submodule ".zsh-syntax-highlighting"]
+	path = .zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+	branch = master
