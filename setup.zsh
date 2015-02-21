@@ -8,3 +8,4 @@ ln -s $PWD/.vimrc $HOME/.vimrc
 ln -s $PWD/.vim $HOME/.vim
 ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 ln -s $PWD/.tmuxline.conf $HOME/.tmuxline.conf
+ln -s $PWD/.Xresources $HOME/.Xresources
