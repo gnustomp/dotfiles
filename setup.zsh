@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 git submodule init
-git submodule update
+git submodule update --remote
 ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
 ln -s $PWD/.zsh-syntax-highlighting .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ln -s $PWD/.zshrc $HOME/.zshrc
