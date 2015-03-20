@@ -2,9 +2,10 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+"let g:airline_powerline_fonts = 1
 let g:airline_theme='dark'
 let g:tmuxline_preset='full'
 let g:tmuxline_powerline_separators=0

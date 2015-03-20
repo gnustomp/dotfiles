@@ -68,15 +68,15 @@ URxvt*foreground: #f4f4f4
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for characters. The first
-URxvt*font: xft:Cousine:size=9
+URxvt*font: xft:Source Code Pro:size=9
 
-URxvt*boldFont: xft:Cousine:bold:size=9
+URxvt*boldFont: xft:Source Code Pro:bold:size=9
 
 ! 
-URxvt*italicFont: xft:Cousine:italic:size=9
+URxvt*italicFont: xft:Source Code Pro:italic:size=9
 
 ! The font list to use for displaying bold, italic or bold italic characters, respectively.
-URxvt*boldItalicFont: xft:Cousine:bold:italic:size=9
+URxvt*boldItalicFont: xft:Source Code Pro:bold:italic:size=9
 
 ! When font styles are not enabled, or this option is enabled (True, option -is, the default), bold/blink font styles imply high intensity
 URxvt*intensityStyles: true
