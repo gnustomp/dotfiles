@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 printf "Updating submodules. Please wait..."
-git submodule update --init --recursive --remote
+git submodule --quiet update --init --recursive --remote
 printf "done\n"
 
 vared -p "Install tmux config? [yes]/no " -c tmux
@@ -29,23 +29,26 @@ if [[ $tmux != "no" ]]; then
 	echo "Installed tmux config"
 fi
 
-if [[ $xresources != "no" ]]; then
+if [[ $xresources != "yes" ]]; then
 	ln -s $PWD/.Xresources $HOME/.Xresources
 	echo "Installed Xresources"
 fi
 
-if [[ $i3 != "no" ]]; then
+if [[ $i3 != "yes" ]]; then
 	ln -s $PWD/.i3 $HOME/.i3
 	ln -s $PWD/.i3status.conf $HOME/.i3status.conf
+	echo "Installed i3 config"
 fi
 
 
-if [[ $extra != "no" ]]; then
+if [[ $extra != "yes" ]]; then
 	ln -s $PWD/.config/compton.conf $HOME/.config/compton.conf
 	ln -s $PWD/.config/dunst $HOME/.config/dunst
+	echo "Installed extra X applications config"
 fi
 
-if [[ $termite != no ]]; then
+if [[ $termite != "yes" ]]; then
 	ln -s $PWD/.config/termite $HOME/.config/termite
+	echo "Installed termite config"
 fi
 
