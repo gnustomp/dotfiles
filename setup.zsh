@@ -1,5 +1,6 @@
 #!/usr/bin/zsh
 git submodule update --init --recursive --remote
+
 ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
 ln -s $PWD/.zsh-syntax-highlighting .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ln -s $PWD/.zshrc $HOME/.zshrc
@@ -15,9 +16,9 @@ if [[ ! -a $HOME/.config ]]; then
 fi
 
 ln -s $PWD/.config/compton.conf $HOME/.config/compton.conf
-ln -s $PWD/.config/dunst $HOME/.config.dunst
+ln -s $PWD/.config/dunst $HOME/.config/dunst
+ln -s $PWD/.config/base16-shell $HOME/.config/base16-shell
+ln -s $PWD/.config/termite $HOME/.config/termite
 
-if [[ ! -a $HOME/.zshrc.local ]]; then
-	touch $HOME/.zshrc.local
-fi
+cp $PWD/.zshrc.local $HOME/.zshrc.local
 

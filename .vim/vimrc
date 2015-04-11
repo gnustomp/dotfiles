@@ -5,8 +5,15 @@ filetype plugin indent on
 set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-"let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
+"let g:airline_powerline_fonts=1
+let g:airline_theme='base16'
 let g:tmuxline_preset='full'
 let g:tmuxline_powerline_separators=0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_c_checkers=['clang_check', 'gcc']
+let base16colorspace=256
+colorscheme base16-bright
 hi Comment cterm=italic
