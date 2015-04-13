@@ -39,3 +39,7 @@
 	path = .vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade
 	branch = master
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+	branch = master
