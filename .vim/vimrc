@@ -3,7 +3,7 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 noshowmode
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
