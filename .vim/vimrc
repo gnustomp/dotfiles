@@ -21,3 +21,5 @@ let g:syntastic_c_checkers=['clang_check', 'gcc']
 let base16colorspace=256
 colorscheme base16-bright
 hi Comment cterm=italic
+hi Normal ctermbg=none
+hi NonText ctermbg=none
