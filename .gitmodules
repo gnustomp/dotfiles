@@ -47,3 +47,7 @@
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
 	branch = master
+[submodule ".vim/bundle/promptline.vim"]
+	path = .vim/bundle/promptline.vim
+	url = https://github.com/edkolev/promptline.vim
+	branch = master

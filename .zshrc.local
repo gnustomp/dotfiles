@@ -14,6 +14,10 @@ ZSH_THEME="fishy"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# # sensitive completion must be off. _ and - will be interchangeable.
+# # HYPHEN_INSENSITIVE="true"
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -26,11 +30,11 @@ ZSH_THEME="fishy"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -76,9 +80,16 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+unsetopt correct_all
+setopt correct
+
 if [ "$TERM" = "xterm" ]; then
 	export TERM="xterm-256color"
 fi
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-bright.dark.sh"
+export EDITOR="vim"
+
+BASE16_SHELL="$HOME/.config/base16-shell/base16-colors.dark.sh"
 source $BASE16_SHELL
+
+source ~/.promptline.zsh
