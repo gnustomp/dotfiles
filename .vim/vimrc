@@ -9,20 +9,33 @@ set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m t
 "let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16'
+let g:airline#extensions#tabline#enabled = 1
 let g:tmuxline_preset = 'full'
 "let g:tmuxline_powerline_separators = 0
-let g:promptline_preset = 'full'
 "let g:promptline_powerline_symbols = 0
 let g:promptline_theme = 'airline'
+let g:promptline_preset = {
+	\'a': [promptline#slices#host(), promptline#slices#user()],
+	\'b': [promptline#slices#cwd()],
+	\'c': [promptline#slices#vcs_branch()],
+	\'y': [promptline#slices#git_status()],
+	\'z': [promptline#slices#jobs()],
+	\'warn': [promptline#slices#last_exit_code()]}
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_c_checkers =['clang_check', 'gcc']
+let g:syntastic_c_checkers = ['clang_check', 'gcc']
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 let base16colorspace = 256
 colorscheme base16-colors
 hi Comment cterm = italic
 hi Normal ctermbg = none
 hi NonText ctermbg = none
+hi DiffAdded ctermbg = none
+hi DiffFile ctermbg = none
+hi DiffNewFile ctermbg = none
+hi DiffLine ctermbg = none
+hi DiffRemoved ctermbg = none
