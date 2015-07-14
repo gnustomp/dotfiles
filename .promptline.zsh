@@ -247,7 +247,7 @@ function __promptline {
   local c_fg="${wrap}38;5;7${end_wrap}"
   local c_bg="${wrap}48;5;18${end_wrap}"
   local c_sep_fg="${wrap}38;5;18${end_wrap}"
-  local warn_fg="${wrap}38;5;7${end_wrap}"
+  local warn_fg="${wrap}38;5;18${end_wrap}"
   local warn_bg="${wrap}48;5;1${end_wrap}"
   local warn_sep_fg="${wrap}38;5;1${end_wrap}"
   local y_fg="${wrap}38;5;7${end_wrap}"

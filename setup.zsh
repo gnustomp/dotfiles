@@ -19,6 +19,7 @@ ln -s $PWD/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestio
 ln -s $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.plugin.zsh $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ln -s $PWD/.config/base16-shell $HOME/.config/base16-shell
 ln -s $PWD/.zshrc $HOME/.zshrc
+ln -s $PWD/.promptline.zsh $HOME/.promptline.zsh
 cp $PWD/.zshrc.local $HOME/.zshrc.local
 echo "Installed zsh config"
 
