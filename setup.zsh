@@ -16,7 +16,6 @@ fi
 ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
 ln -s $PWD/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ln -s $PWD/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-ln -s $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.plugin.zsh $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ln -s $PWD/.config/base16-shell $HOME/.config/base16-shell
 ln -s $PWD/.zshrc $HOME/.zshrc
 ln -s $PWD/.promptline.zsh $HOME/.promptline.zsh
