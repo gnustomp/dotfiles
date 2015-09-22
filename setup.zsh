@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 printf "Updating submodules. Please wait..."
-git submodule --quiet update --init --recursive --remote
+git submodule update --init --recursive --remote
 printf "done\n"
 
 vared -p "Install tmux config? [yes]/no " -c tmux
