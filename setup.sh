@@ -1,9 +1,8 @@
-#!/usr/bin/zsh
+#!/usr/bin/sh
 printf "Updating submodules. Please wait..."
 git submodule update --init --recursive --remote
 printf "done\n"
 
-vared -p "Install tmux config? [yes]/no " -c tmux
 vared -p "Install Xresources? yes/[no] " -c xresources
 vared -p "Install i3 config? yes/[no] " -c i3
 vared -p "Install extra X application config? yes/[no] " -c extra
@@ -13,19 +12,25 @@ if [[ ! -a $HOME/.config ]]; then
 	mkdir $HOME/.config
 fi
 
-ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
-ln -s $PWD/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-ln -s $PWD/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+ln -s $PWD/.promptline.sh $HOME/.promptline.sh
+ln -s $PWD/.promptline-nogit.sh $HOME/.promptline-nogit.sh
 ln -s $PWD/.config/base16-shell $HOME/.config/base16-shell
-ln -s $PWD/.zshrc $HOME/.zshrc
-ln -s $PWD/.promptline.zsh $HOME/.promptline.zsh
-cp $PWD/.zshrc.local $HOME/.zshrc.local
-echo "Installed zsh config"
+if command -v zsh > /dev/null 2>&1; then
+	ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
+	ln -s $PWD/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	ln -s $PWD/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	ln -s $PWD/.zshrc $HOME/.zshrc
+	cp $PWD/.zshrc.local $HOME/.zshrc.local
+	echo "Installed zsh config"
+else
+	cat $PWD/.bashrc >> ~/.bashrc
+	echo "Installed bash config"
+fi
 
 ln -s $PWD/.vim $HOME/.vim
 echo "Installed vim config"
 
-if [[ $tmux != "no" ]]; then
+if command -v tmux > /dev/null 2>&1; then
 	ln -s $PWD/.tmux.conf $HOME/.tmux.conf
 	ln -s $PWD/.tmuxline.conf $HOME/.tmuxline.conf
 	echo "Installed tmux config"
