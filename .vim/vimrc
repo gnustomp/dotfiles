@@ -3,15 +3,16 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 noshowmode
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 11 go=agimt
 
-let base16colorspace = 256
-colorscheme base16-colors
+let g:hybrid_user_Xresources=1
+colo hybrid
 "let g:airline_left_sep = ''
 "let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16fix'
+let g:airline_theme = 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:tmuxline_preset = 'full'
 "let g:tmuxline_powerline_separators = 0
 "let g:promptline_powerline_symbols = 0
@@ -28,21 +29,14 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_checkevs = ['clang_check', 'gcc']
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['pyflakes', 'python']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_error_symbol = '!'
 let g:syntastic_warning_symbol = '!'
 
-hi Comment cterm = italic
-hi Pmenu ctermbg = 8, ctermfg = 15
-hi PmenuSel ctermfg = 15
+hi Comment cterm=italic, gui=italic
 hi Normal ctermbg = none
 hi NonText ctermbg = none
-hi DiffAdded ctermbg = none
-hi DiffFile ctermbg = none
-hi DiffNewFile ctermbg = none
-hi DiffLine ctermbg = none
-hi DiffRemoved ctermbg = none
 "hi airline_warning ctermfg = 7
 "hi airline_warning_bold ctermfg = 7
 
