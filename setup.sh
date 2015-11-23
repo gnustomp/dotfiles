@@ -12,9 +12,6 @@ if [[ ! -a $HOME/.config ]]; then
 	mkdir $HOME/.config
 fi
 
-ln -s $PWD/.promptline.sh $HOME/.promptline.sh
-ln -s $PWD/.promptline-nogit.sh $HOME/.promptline-nogit.sh
-ln -s $PWD/.config/base16-shell $HOME/.config/base16-shell
 if command -v zsh > /dev/null 2>&1; then
 	ln -s $PWD/.oh-my-zsh $HOME/.oh-my-zsh
 	ln -s $PWD/zsh-syntax-highlighting $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -41,7 +38,7 @@ if [[ $xresources == "yes" ]]; then
 	echo "Installed Xresources"
 fi
 
-if [[ $i3 == "yes" ]]; then
+if command -v i3 > /dev/null 2>&1; then
 	ln -s $PWD/.i3 $HOME/.i3
 	ln -s $PWD/.i3status.conf $HOME/.i3status.conf
 	echo "Installed i3 config"
@@ -54,7 +51,7 @@ if [[ $extra == "yes" ]]; then
 	echo "Installed extra X applications config"
 fi
 
-if [[ $termite == "yes" ]]; then
+if command -v termite > /dev/null 2>&1; then
 	ln -s $PWD/.config/termite $HOME/.config/termite
 	echo "Installed termite config"
 fi
