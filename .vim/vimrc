@@ -10,7 +10,7 @@ colo hybrid
 "let g:airline_left_sep = ''
 "let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'hybrid'
+let g:airline_theme = 'hybridline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:tmuxline_preset = 'full'
@@ -35,8 +35,8 @@ let g:syntastic_error_symbol = '!'
 let g:syntastic_warning_symbol = '!'
 
 hi Comment cterm=italic, gui=italic
-hi Normal ctermbg = none
-hi NonText ctermbg = none
+"hi Normal ctermbg = none
+"hi NonText ctermbg = none
 "hi airline_warning ctermfg = 7
 "hi airline_warning_bold ctermfg = 7
 
