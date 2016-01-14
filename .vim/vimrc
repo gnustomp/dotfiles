@@ -5,7 +5,7 @@ syntax on
 filetype plugin indent on
 set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 11 go=agimt
 
-let g:hybrid_user_Xresources=1
+let g:hybrid_use_Xresources=1
 colo hybrid
 "let g:airline_left_sep = ''
 "let g:airline_right_sep = ''
@@ -14,15 +14,6 @@ let g:airline_theme = 'hybridline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:tmuxline_preset = 'full'
-"let g:tmuxline_powerline_separators = 0
-"let g:promptline_powerline_symbols = 0
-let g:promptline_theme = 'airline'
-let g:promptline_preset = {
-	\'a': [promptline#slices#host(), promptline#slices#user()],
-	\'b': [promptline#slices#cwd()],
-	\'c': [promptline#slices#vcs_branch()],
-	\'z': [promptline#slices#jobs()],
-	\'warn': [promptline#slices#last_exit_code()]}
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -35,8 +26,4 @@ let g:syntastic_error_symbol = '!'
 let g:syntastic_warning_symbol = '!'
 
 hi Comment cterm=italic, gui=italic
-"hi Normal ctermbg = none
-"hi NonText ctermbg = none
-"hi airline_warning ctermfg = 7
-"hi airline_warning_bold ctermfg = 7
 
