@@ -3,7 +3,7 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 11 go=agimt
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 11 go=agim
 
 let g:hybrid_use_Xresources=1
 colo hybrid
