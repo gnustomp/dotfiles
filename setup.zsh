@@ -10,8 +10,13 @@ if [[ ! -a $HOME/.config ]]; then
 fi
 
 ln -s $PWD/.zprezto $HOME/.zprezto
-cp $PWD/.zpreztorc $HOME/.zprezto/runcoms/zpreztorc
-cp $PWD/.zshrc $HOME/.zshrc
+cp $PWD/.zpreztorc $PWD/.zprezto/runcoms/zpreztorc
+cp $PWD/.zprofile $PWD/.zprezto/runcoms/zprofile
+cp $PWD/.prompt $PWD/.zprezto/modules/prompt/functions/prompt_skwp_setup
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 echo "Installed zsh config"
 
 ln -s $PWD/.vim $HOME/.vim
