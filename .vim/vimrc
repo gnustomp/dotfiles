@@ -5,15 +5,16 @@ syntax on
 filetype plugin indent on
 set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu mouse=a t_ZH=[3m t_ZR=[23m timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 11 go=agim
 
-let g:hybrid_use_Xresources=1
+let g:hybrid_custom_term_colors = 1
 colo hybrid
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+"let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybridline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:tmuxline_preset = 'full'
+let g:tmuxline_powerline_separators = 0
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
