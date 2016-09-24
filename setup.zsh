@@ -10,13 +10,15 @@ if [[ ! -a $HOME/.config ]]; then
 fi
 
 ln -s $PWD/.zprezto $HOME/.zprezto
-cp $PWD/.zpreztorc $PWD/.zprezto/runcoms/zpreztorc
-cp $PWD/.zprofile $PWD/.zprezto/runcoms/zprofile
-cp $PWD/.prompt $PWD/.zprezto/modules/prompt/functions/prompt_skwp_setup
+cp $PWD/prompt_gs_setup $PWD/.zprezto/modules/prompt/functions/
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+rm $HOME/.zpreztorc
+rm $HOME/.zprofile
+cp $PWD/.zpreztorc $HOME/.zpreztorc
+cp $PWD/.zprofile $HOME/.zprofile
 echo "Installed zsh config"
 
 ln -s $PWD/.vim $HOME/.vim
