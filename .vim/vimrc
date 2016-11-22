@@ -3,17 +3,19 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 10 go=agim pt=<F2>
-set t_ZH=[3m t_ZR=[23m
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 10 go=agim completeopt=menuone
+set pt=<F2> t_ZH=[3m t_ZR=[23m
 
 let g:hybrid_custom_term_colors = 1
 colo hybrid
+
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 "let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybridline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
+
 let g:tmuxline_preset = 'full'
 let g:tmuxline_powerline_separators = 0
 
@@ -23,6 +25,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 hi Comment cterm=italic, gui=italic
 
