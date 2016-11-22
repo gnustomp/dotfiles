@@ -3,7 +3,7 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 10 go=agim
+set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 10 go=agim pt=<F2>
 set t_ZH=[3m t_ZR=[23m
 
 let g:hybrid_custom_term_colors = 1
@@ -21,10 +21,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_c_checkevs = ['clang_check', 'gcc']
-let g:syntastic_python_checkers = ['pyflakes', 'python']
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_error_symbol = '!'
+let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 
 hi Comment cterm=italic, gui=italic
