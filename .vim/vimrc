@@ -1,13 +1,15 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-syntax on
-filetype plugin indent on
-set bg=dark nocp ml mls=1 nu si noet ts=4 sw=4 nu timeoutlen=50 nosmd guifont=Source\ Code\ Pro\ 10 go=agim completeopt=menuone
-set pt=<F2> t_ZH=[3m t_ZR=[23m
-
+set bg=dark
 let g:hybrid_custom_term_colors = 1
 colo hybrid
+
+syntax on
+filetype plugin indent on
+set nocp nu si noet ts=4 sw=4 nu tm=150 nosmd gfn=Source\ Code\ Pro\ 10 go=agi cot=menuone
+set pt=<F2> t_ZH=[3m t_ZR=[23m
+au FileType qf setl nonu cc=
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -26,7 +28,15 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = '<c-n>'
+
+let g:ycm_confirm_extra_conf = 0
+let mapleader=','
+au BufNewFile,BufRead ~/source/libinput/*.[ch] setl ts=8 sw=8 cc=80
+au FileType qf setl cc=
+au FileType location setl cc=
 
 hi Comment cterm=italic, gui=italic
-
+hi LineNr ctermbg=0 ctermfg=7
+hi Error ctermbg=0
+hi Todo ctermbg=0
