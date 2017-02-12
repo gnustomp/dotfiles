@@ -1,6 +1,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
-	url = https://github.com/sorin-ionescu/prezto
+	url = https://github.com/zsh-users/prezto
 [submodule ".vim/pack/gnustomp/start/completor.vim"]
 	path = .vim/pack/gnustomp/start/completor.vim
 	url = https://github.com/maralla/completor.vim
