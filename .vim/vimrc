@@ -1,34 +1,87 @@
+" colour options
 set bg=dark
 let g:hybrid_custom_term_colors = 1
 colo hybrid
 
 syntax on
 filetype plugin indent on
-set nocp nu si noet ts=4 sw=4 nu tm=150 nosmd cot=menuone
-set pt=<F2> t_ZH=[3m t_ZR=[23m
-set gfn=Source\ Code\ Pro\ 10 go=agi
 
+" indent settings
+set smartindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
+" italics mode
+set t_ZH=[3m
+set t_ZR=[23m
+
+" cursor shape for insert and replace
+set t_SI=[6\ q
+set t_SR=[4\ q
+set t_EI=[2\ q
+
+" misc settings
+set nocompatible
+set number
+set timeoutlen=100
+set ttimeoutlen=100
+set noshowmode
+set completeopt=menuone
+set pastetoggle=<F2>
+
+let mapleader=','
+
+" include per-directory settings
+source $HOME/.vim/dirs.vimrc
+
+" fix qf and loc list
+autocmd FileType qf setl nonu cc=
+autocmd FileType location setl cc=
+
+highlight Comment cterm=italic, gui=italic
+highlight LineNr ctermbg=0 ctermfg=7
+highlight Error ctermbg=0
+highlight Todo ctermbg=0
+
+" vim-airline options
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-"let g:airline_powerline_fonts = 1
+let g:airline_left_alt_sep = '│'
+let g:airline_right_alt_sep = '│'
+let g:airline_symbols.notexists = '*'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.whitespace = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = 'RO'
+
 let g:airline_theme = 'hybridline'
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+
+" patch hybridline insert mode
+function! AirlineThemePatch(palette)
+	if g:airline_theme == 'hybridline'
+		let g:airline#themes#hybridline#palette.insert = copy(g:airline#themes#hybridline#palette.normal)
+		let g:airline#themes#hybridline#palette.insert.airline_a = ['#0087af', '#8abeb7', 23, 14]
+	endif
+endfunction
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 
+" tmuxline options
 let g:tmuxline_preset = 'full'
 let g:tmuxline_powerline_separators = 0
 
+" ale options
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
 
+" supertab options
 let g:SuperTabDefaultCompletionType = '<c-n>'
-
-let mapleader=','
-au BufNewFile,BufRead ~/source/libinput/*.[ch] setl ts=8 sw=8 cc=80
-au FileType qf setl nonu cc=
-au FileType location setl cc=
-
-hi Comment cterm=italic, gui=italic
-hi LineNr ctermbg=0 ctermfg=7
-hi Error ctermbg=0
-hi Todo ctermbg=0
