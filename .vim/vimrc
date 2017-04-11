@@ -24,20 +24,22 @@ set t_EI=[2\ q
 " misc settings
 set nocompatible
 set number
-set timeoutlen=100
+set timeoutlen=300
 set ttimeoutlen=100
 set noshowmode
 set completeopt=menuone
 set pastetoggle=<F2>
 
 let mapleader=','
+let maplocalleader='\\'
 
 " include per-directory settings
 source $HOME/.vim/dirs.vimrc
 
 " fix qf and loc list
-autocmd FileType qf setl nonu cc=
-autocmd FileType location setl cc=
+autocmd FileType qf setl nonu colorcolumn=
+autocmd FileType location setl colorcolumn=
+autocmd FileType tex setl textwidth=110 colorcolumn=110 tabstop=8 shiftwidth=8 spell
 
 highlight Comment cterm=italic, gui=italic
 highlight LineNr ctermbg=0 ctermfg=7
