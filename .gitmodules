@@ -1,15 +1,18 @@
-[submodule ".vim/pack/gnustomp/start/completor.vim"]
-	path = .vim/pack/gnustomp/start/completor.vim
-	url = https://github.com/maralla/completor.vim
 [submodule ".vim/pack/gnustomp/start/ale"]
 	path = .vim/pack/gnustomp/start/ale
 	url = https://github.com/w0rp/ale
+[submodule ".vim/pack/gnustomp/start/completor.vim"]
+	path = .vim/pack/gnustomp/start/completor.vim
+	url = https://github.com/maralla/completor.vim
 [submodule ".vim/pack/gnustomp/start/LaTeX-Box"]
 	path = .vim/pack/gnustomp/start/LaTeX-Box
 	url = https://github.com/LaTeX-Box-Team/LaTeX-Box
 [submodule ".vim/pack/gnustomp/start/ListToggle"]
 	path = .vim/pack/gnustomp/start/ListToggle
 	url = https://github.com/Valloric/ListToggle
+[submodule ".vim/pack/gnustomp/opt/tmuxline.vim"]
+	path = .vim/pack/gnustomp/opt/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
 [submodule ".vim/pack/gnustomp/start/vim-airline"]
 	path = .vim/pack/gnustomp/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -28,9 +31,6 @@
 [submodule ".vim/pack/gnustomp/start/vim-sensible"]
 	path = .vim/pack/gnustomp/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible
-[submodule ".vim/pack/gnustomp/opt/tmuxline.vim"]
-	path = .vim/pack/gnustomp/opt/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim
 [submodule ".zim"]
 	path = .zim
 	url = https://github.com/Eriner/zim.git
