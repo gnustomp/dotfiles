@@ -29,6 +29,8 @@ set ttimeoutlen=100
 set noshowmode
 set completeopt=menuone
 set pastetoggle=<F2>
+set splitbelow
+set splitright
 
 let mapleader=','
 let maplocalleader='\\'
@@ -36,32 +38,29 @@ let maplocalleader='\\'
 " include per-directory settings
 source $HOME/.vim/dirs.vimrc
 
-" fix qf and loc list
-autocmd FileType qf setl nonu colorcolumn=
-autocmd FileType location setl colorcolumn=
 autocmd FileType tex setl textwidth=110 colorcolumn=110 tabstop=8 shiftwidth=8 spell
 
-highlight Comment cterm=italic, gui=italic
+highlight Comment cterm=italic
 highlight LineNr ctermbg=0 ctermfg=7
 highlight Error ctermbg=0
 highlight Todo ctermbg=0
+highlight QuickFixLine ctermfg=234 ctermbg=11
 
 " vim-airline options
-let g:airline_powerline_fonts = 1
-
+let g:airline_symbols_ascii = 1
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_left_alt_sep = '│'
-let g:airline_right_alt_sep = '│'
-let g:airline_symbols.notexists = '*'
+let g:airline_left_alt_sep = ''
+let g:airline_right_alt_sep = ''
+"let g:airline_symbols.notexists = '*'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = 'RO'
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = 'RO'
 
 let g:airline_theme = 'hybridline'
 let g:airline_theme_patch_func = 'AirlineThemePatch'
@@ -75,6 +74,7 @@ function! AirlineThemePatch(palette)
 endfunction
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 
 " tmuxline options
@@ -84,6 +84,3 @@ let g:tmuxline_powerline_separators = 0
 " ale options
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '!'
-
-" supertab options
-let g:SuperTabDefaultCompletionType = '<c-n>'

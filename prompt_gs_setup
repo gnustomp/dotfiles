@@ -1,72 +1,61 @@
+# prompt style and colors based on Steve Losh's Prose theme:
+# http://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
 #
-# A single line theme with Git information on the left and Ruby on the right.
-#
-# Authors:
-#   Steve Losh <steve@stevelosh.com>
-#   Bart Trojanowski <bart@jukie.net>
-#   Brian Carper <brian@carper.ca>
-#   steeef <steeef@gmail.com>
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#   Yan Pritzker <yan@pritzker.ws>
-#
-# Screenshots:
-#   http://i.imgur.com/gLgVp6Y.png
-#
+# Requires the `git-info` zmodule to be included in the .zimrc file.
 
-function prompt_gs_precmd {
-  # Get Git repository information.
-  if (( $+functions[git-info] )); then
-    git-info
-  fi
-
-  # Get Ruby information.
-  if (( $+functions[ruby-info] )); then
-    ruby-info
-  fi
+prompt_gs_git() {
+  [[ -n ${git_info} ]] && print -n " ${(e)git_info[prompt]}"
 }
 
-function prompt_gs_setup {
-  setopt LOCAL_OPTIONS
-  unsetopt XTRACE KSH_ARRAYS
-  prompt_opts=(cr percent subst)
+prompt_gs_virtualenv() {
+  [[ -n ${VIRTUAL_ENV} ]] && print -n " (%F{blue}${VIRTUAL_ENV:t}%f)"
+}
 
-  # Load required functions.
-  autoload -Uz add-zsh-hook
+prompt_gs_precmd() {
+  (( ${+functions[git-info]} )) && git-info
+}
 
-  # Add hook to set up prompt parameters before each command.
-  add-zsh-hook precmd prompt_gs_precmd
+prompt_gs_setup() {
+  [[ -n ${VIRTUAL_ENV} ]] && export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-  # Use extended color pallete if available.
-  if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    _prompt_gs_colors=(
-      "%F{81}"  # Turquoise
-      "%F{166}" # Orange
-      "%F{135}" # Purple
-      "%F{161}" # Hotpink
-      "%F{118}" # Limegreen
-    )
+  local purple
+  local orange
+  local limegreen
+  local turquoise
+  local hotpink
+  # use extended color palette if available
+  if [[ -n ${terminfo[colors]} && ${terminfo[colors]} -ge 256 ]]; then
+    purple='%F{135}'
+    orange='%F{166}'
+    limegreen='%F{118}'
+    turquoise='%F{81}'
+    hotpink='%F{161}'
   else
-    _prompt_gs_colors=(
-      "%F{cyan}"
-      "%F{yellow}"
-      "%F{magenta}"
-      "%F{red}"
-      "%F{green}"
-    )
+    purple='%F{magenta}'
+    orange='%F{yellow}'
+    limegreen='%F{green}'
+    turquoise='%F{cyan}'
+    hotpink='%F{red}'
   fi
 
-  # Set git-info parameters.
-  zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:branch' format "${_prompt_gs_colors[1]}%b%f"
-  zstyle ':prezto:module:git:info:added' format "${_prompt_gs_colors[5]}+%f"
-  zstyle ':prezto:module:git:info:deleted' format "${_prompt_gs_colors[2]}-%f"
-  zstyle ':prezto:module:git:info:modified' format "${_prompt_gs_colors[4]}~%f"
-  zstyle ':prezto:module:git:info:untracked' format "${_prompt_gs_colors[3]}?%f"
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '(%b%d%a%m%u)'
+  autoload -Uz add-zsh-hook
+  autoload -Uz colors && colors
 
-  # Define prompts.
-  local return_status=""
-  PROMPT="${_prompt_gs_colors[3]}%n%f@${_prompt_gs_colors[2]}%m%f ${_prompt_gs_colors[5]}%~%f "'${git_info:+${(e)git_info[prompt]}}'"$ "
+  prompt_opts=(cr percent subst)
+
+  add-zsh-hook precmd prompt_gs_precmd
+
+  zstyle ':zim:git-info' verbose 'yes'
+  zstyle ':zim:git-info:branch' format '%b'
+  zstyle ':zim:git-info:commit' format '%c'
+  zstyle ':zim:git-info:action' format "(${limegreen}%s%f)"
+  zstyle ':zim:git-info:unindexed' format "${orange}?"
+  zstyle ':zim:git-info:indexed' format "${limegreen}+"
+  zstyle ':zim:git-info:untracked' format "${hotpink}-"
+  zstyle ':zim:git-info:keys' format \
+    'prompt' "(${turquoise}%b%c%I%i%u%f)%s"
+
+  PROMPT="${purple}%n%f@${orange}%m%f ${limegreen}%~%f\$(prompt_gs_git)\$(prompt_gs_virtualenv) %(!.#.$) "
   RPROMPT='%F{red}%(?..%?)'
 }
 

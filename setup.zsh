@@ -3,23 +3,17 @@ printf "Updating submodules. Please wait..."
 git submodule update --init --recursive --remote
 printf "done\n"
 
-vared -p "redshift config? yes/[no] " -c redshift
-vared -p "install YouCompleteMe? yes/[no] " -c ycm
-
 if [[ ! -a $HOME/.config ]]; then
 	mkdir $HOME/.config
 fi
 
-ln -s $PWD/.zprezto $HOME/.zprezto
-cp $PWD/prompt_gs_setup $PWD/.zprezto/modules/prompt/functions/
+ln -s $PWD/.zim $HOME/.zim
+ln -s $PWD/prompt_gs_setup $PWD/.zim/modules/prompt/functions/prompt_gs_setup
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-rm $HOME/.zpreztorc
-rm $HOME/.zprofile
-cp $PWD/.zpreztorc $HOME/.zpreztorc
-cp $PWD/.zprofile $HOME/.zprofile
+cp $PWD/.zimrc $HOME/.zimrc
+cp $PWD/.zshenv $HOME/.zshenv
+cp $PWD/.zshrc $HOME/.zshrc
+cp $PWD/.zlogin $HOME/.zlogin
 echo "Installed zsh config"
 
 ln -s $PWD/.vim $HOME/.vim
@@ -32,12 +26,3 @@ if command -v tmux > /dev/null 2>&1; then
 else
 	echo "Did not install tmux config"
 fi
-
-if [[ $redshift == "yes" ]]; then
-	ln -s $PWD/.config/redshift.conf $HOME/.config/redshift.conf
-	echo "Installed redshift config"
-else
-	echo "Did not install redshift config"
-fi
-
-if [[ $ycm == "yes" ]]; then

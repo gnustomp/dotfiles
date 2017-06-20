@@ -1,6 +1,3 @@
-[submodule ".zprezto"]
-	path = .zprezto
-	url = https://github.com/zsh-users/prezto
 [submodule ".vim/pack/gnustomp/start/completor.vim"]
 	path = .vim/pack/gnustomp/start/completor.vim
 	url = https://github.com/maralla/completor.vim
@@ -13,9 +10,6 @@
 [submodule ".vim/pack/gnustomp/start/ListToggle"]
 	path = .vim/pack/gnustomp/start/ListToggle
 	url = https://github.com/Valloric/ListToggle
-[submodule ".vim/pack/gnustomp/start/supertab"]
-	path = .vim/pack/gnustomp/start/supertab
-	url = https://github.com/ervandew/supertab
 [submodule ".vim/pack/gnustomp/start/vim-airline"]
 	path = .vim/pack/gnustomp/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -37,3 +31,6 @@
 [submodule ".vim/pack/gnustomp/opt/tmuxline.vim"]
 	path = .vim/pack/gnustomp/opt/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
+[submodule ".zim"]
+	path = .zim
+	url = https://github.com/Eriner/zim.git
