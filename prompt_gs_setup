@@ -20,22 +20,22 @@ prompt_gs_setup() {
 
   local purple
   local orange
-  local limegreen
-  local turquoise
-  local hotpink
+  local green
+  local blue
+  local red
   # use extended color palette if available
   if [[ -n ${terminfo[colors]} && ${terminfo[colors]} -ge 256 ]]; then
     purple='%F{135}'
     orange='%F{166}'
-    limegreen='%F{118}'
-    turquoise='%F{81}'
-    hotpink='%F{161}'
+    green='%F{40}'
+    blue='%F{75}'
+    red='%F{160}'
   else
     purple='%F{magenta}'
     orange='%F{yellow}'
-    limegreen='%F{green}'
-    turquoise='%F{cyan}'
-    hotpink='%F{red}'
+    green='%F{green}'
+    blue='%F{cyan}'
+    red='%F{red}'
   fi
 
   autoload -Uz add-zsh-hook
@@ -48,14 +48,14 @@ prompt_gs_setup() {
   zstyle ':zim:git-info' verbose 'yes'
   zstyle ':zim:git-info:branch' format '%b'
   zstyle ':zim:git-info:commit' format '%c'
-  zstyle ':zim:git-info:action' format "(${limegreen}%s%f)"
+  zstyle ':zim:git-info:action' format "(${green}%s%f)"
   zstyle ':zim:git-info:unindexed' format "${orange}?"
-  zstyle ':zim:git-info:indexed' format "${limegreen}+"
-  zstyle ':zim:git-info:untracked' format "${hotpink}-"
+  zstyle ':zim:git-info:indexed' format "${green}+"
+  zstyle ':zim:git-info:untracked' format "${red}-"
   zstyle ':zim:git-info:keys' format \
-    'prompt' "(${turquoise}%b%c%I%i%u%f)%s"
+    'prompt' "(${blue}%b%c%I%i%u%f)%s"
 
-  PROMPT="${purple}%n%f@${orange}%m%f ${limegreen}%~%f\$(prompt_gs_git)\$(prompt_gs_virtualenv) %(!.#.$) "
+  PROMPT="${purple}%n%f@${orange}%m%f ${green}%~%f\$(prompt_gs_git)\$(prompt_gs_virtualenv) %(!.#.$) "
   RPROMPT='%F{red}%(?..%?)'
 }
 

@@ -1,6 +1,7 @@
 " colour options
 set bg=dark
-let g:hybrid_custom_term_colors = 1
+set termguicolors
+"let g:hybrid_custom_term_colors = 1
 colo hybrid
 
 syntax on
@@ -41,10 +42,7 @@ source $HOME/.vim/dirs.vimrc
 autocmd FileType tex setl textwidth=110 colorcolumn=110 tabstop=8 shiftwidth=8 spell
 
 highlight Comment cterm=italic
-highlight LineNr ctermbg=0 ctermfg=7
-highlight Error ctermbg=0
-highlight Todo ctermbg=0
-highlight QuickFixLine ctermfg=234 ctermbg=11
+highlight WildMenu ctermfg=234 ctermbg=221 guifg=#1d1f21 guibg=#f0c674
 
 " vim-airline options
 let g:airline_symbols_ascii = 1
@@ -61,15 +59,31 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = ''
 "let g:airline_symbols.branch = ''
 "let g:airline_symbols.readonly = 'RO'
+let g:airline_mode_map = {
+			\ '__': '------',
+			\ 'n': 'NORMAL',
+			\ 'i': 'INSERT',
+			\ 'R': 'RPLACE',
+			\ 'c': 'CMMAND',
+			\ 'v': 'VISUAL',
+			\ 'V': 'V-LINE',
+			\ '': 'V-BLOK',
+			\ 's': 'SELECT',
+			\ 'S': 'S-LINE',
+			\ '': 'S-BLOK',
+			\ 't': 'TERMNL',
+			\ }
 
 let g:airline_theme = 'hybridline'
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 
-" patch hybridline insert mode
+" patch hybridline
 function! AirlineThemePatch(palette)
 	if g:airline_theme == 'hybridline'
 		let g:airline#themes#hybridline#palette.insert = copy(g:airline#themes#hybridline#palette.normal)
-		let g:airline#themes#hybridline#palette.insert.airline_a = ['#0087af', '#8abeb7', 23, 14]
+		let g:airline#themes#hybridline#palette.insert.airline_a = ['#000000', '#8abeb7', 23, 14]
+		let g:airline#themes#hybridline#palette.insert_paste.airline_a = ['#000000', '#cc6666', 16, 1]
+		let g:airline#themes#hybridline#palette.normal.airline_a = ['#000000', '#b5bd68', 22, 10]
 	endif
 endfunction
 
@@ -82,5 +96,5 @@ let g:tmuxline_preset = 'full'
 let g:tmuxline_powerline_separators = 0
 
 " ale options
-let g:ale_sign_error = 'X'
-let g:ale_sign_warning = '!'
+let g:ale_sign_error = '=>'
+let g:ale_sign_warning = '->'
