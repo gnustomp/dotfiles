@@ -9,21 +9,10 @@ filetype plugin indent on
 
 " indent settings
 set smartindent
-set noexpandtab
 set tabstop=4
 set shiftwidth=4
 
-" italics mode
-set t_ZH=[3m
-set t_ZR=[23m
-
-" cursor shape for insert and replace
-set t_SI=[6\ q
-set t_SR=[4\ q
-set t_EI=[2\ q
-
 " misc settings
-set nocompatible
 set number
 set timeoutlen=300
 set ttimeoutlen=100

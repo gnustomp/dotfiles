@@ -3,10 +3,6 @@ printf "Updating submodules. Please wait..."
 git submodule update --init --recursive --remote
 printf "done\n"
 
-if [[ ! -a $HOME/.config ]]; then
-	mkdir $HOME/.config
-fi
-
 ln -s $PWD/.zim $HOME/.zim
 ln -s $PWD/prompt_gs_setup $PWD/.zim/modules/prompt/functions/prompt_gs_setup
 setopt EXTENDED_GLOB
@@ -18,6 +14,17 @@ echo "Installed zsh config"
 
 ln -s $PWD/.vim $HOME/.vim
 echo "Installed vim config"
+
+if command -v nvim > /dev/null 2>&1; then
+	mkdir -p $HOME/.config/nvim
+	mkdir -p $HOME/.local/share/nvim/site
+
+	ln -s $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
+	ln -s $HOME/.vim/pack $HOME/.local/share/nvim/site/pack
+	echo "Installed neovim config"
+else
+	echo "Did not install neovim config"
+fi
 
 if command -v tmux > /dev/null 2>&1; then
 	ln -s $PWD/.tmux.conf $HOME/.tmux.conf
