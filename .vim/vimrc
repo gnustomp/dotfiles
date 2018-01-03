@@ -29,6 +29,7 @@ let maplocalleader='\\'
 source $HOME/.vim/dirs.vimrc
 
 autocmd FileType tex setl textwidth=110 colorcolumn=110 tabstop=8 shiftwidth=8 spell
+autocmd FileType markdown setl textwidth=110 colorcolumn=110 spell
 
 highlight Comment cterm=italic
 highlight WildMenu ctermfg=234 ctermbg=221 guifg=#1d1f21 guibg=#f0c674
