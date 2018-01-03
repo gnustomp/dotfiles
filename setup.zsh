@@ -13,6 +13,7 @@ cp $PWD/.zlogin $HOME/.zlogin
 echo "Installed zsh config"
 
 ln -s $PWD/.vim $HOME/.vim
+touch $HOME/.vim/dirs.vimrc
 echo "Installed vim config"
 
 if command -v nvim > /dev/null 2>&1; then
