@@ -14,8 +14,8 @@ set shiftwidth=4
 
 " misc settings
 set number
-set timeoutlen=300
-set ttimeoutlen=100
+set timeoutlen=150
+set ttimeoutlen=50
 set noshowmode
 set completeopt=menuone
 set pastetoggle=<F2>

@@ -4,8 +4,6 @@ git submodule update --init --recursive --remote
 printf "done\n"
 
 ln -s $PWD/.zim $HOME/.zim
-ln -s $PWD/prompt_gs_setup $PWD/.zim/modules/prompt/functions/prompt_gs_setup
-setopt EXTENDED_GLOB
 cp $PWD/.zimrc $HOME/.zimrc
 cp $PWD/.zshenv $HOME/.zshenv
 cp $PWD/.zshrc $HOME/.zshrc
