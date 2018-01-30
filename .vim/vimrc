@@ -21,6 +21,7 @@ set completeopt=menuone
 set pastetoggle=<F2>
 set splitbelow
 set splitright
+set fillchars+=vert:│
 
 let mapleader=','
 let maplocalleader='\\'
