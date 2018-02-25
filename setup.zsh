@@ -1,33 +1,36 @@
 #!/usr/bin/env zsh
 printf "Updating submodules. Please wait..."
 git submodule update --init --recursive --remote
-printf "done\n"
+echo "done"
 
-ln -s $PWD/.zim $HOME/.zim
-cp $PWD/.zimrc $HOME/.zimrc
-cp $PWD/.zshenv $HOME/.zshenv
-cp $PWD/.zshrc $HOME/.zshrc
-cp $PWD/.zlogin $HOME/.zlogin
+DOTFILES=`pwd`
+cd $HOME
+
+ln -Ts $DOTFILES/.zim .zim
+cp $DOTFILES/.zimrc .zimrc
+cp $DOTFILES/.zshenv .zshenv
+cp $DOTFILES/.zshrc .zshrc
+cp $DOTFILES/.zlogin .zlogin
 echo "Installed zsh config"
 
-ln -s $PWD/.vim $HOME/.vim
-touch $HOME/.vim/dirs.vimrc
+ln -Ts $DOTFILES/.vim .vim
+touch .vim/dirs.vimrc
 echo "Installed vim config"
 
 if command -v nvim > /dev/null 2>&1; then
-	mkdir -p $HOME/.config/nvim
-	mkdir -p $HOME/.local/share/nvim/site
+	mkdir -p .config/nvim
+	mkdir -p .local/share/nvim/site
 
-	ln -s $HOME/.vim/vimrc $HOME/.config/nvim/init.vim
-	ln -s $HOME/.vim/pack $HOME/.local/share/nvim/site/pack
+	ln -Ts .vim/vimrc .config/nvim/init.vim
+	ln -Ts .vim/pack .local/share/nvim/site/pack
 	echo "Installed neovim config"
 else
 	echo "Did not install neovim config"
 fi
 
 if command -v tmux > /dev/null 2>&1; then
-	ln -s $PWD/.tmux.conf $HOME/.tmux.conf
-	ln -s $PWD/.tmuxline.conf $HOME/.tmuxline.conf
+	ln -Ts $DOTFILES/.tmux.conf .tmux.conf
+	ln -Ts $DOTFILES/.tmuxline.conf .tmuxline.conf
 	echo "Installed tmux config"
 else
 	echo "Did not install tmux config"
