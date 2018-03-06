@@ -37,3 +37,6 @@
 [submodule ".vim/pack/gnustomp/start/vim-vinegar"]
 	path = .vim/pack/gnustomp/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule ".vim/pack/gnustomp/start/neotex"]
+	path = .vim/pack/gnustomp/start/neotex
+	url = https://github.com/donRaphaco/neotex
