@@ -9,11 +9,12 @@ filetype plugin indent on
 
 " indent settings
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 
 " misc settings
 set number
+set cursorline
 set timeoutlen=150
 set ttimeoutlen=150
 set noshowmode
@@ -26,13 +27,7 @@ set fillchars+=vert:│
 let mapleader=','
 let maplocalleader='\\'
 
-" include per-directory settings
-source $HOME/.vim/dirs.vimrc
-
-autocmd FileType tex setl textwidth=110 colorcolumn=110 tabstop=8 shiftwidth=8 spell
-autocmd FileType markdown setl textwidth=110 colorcolumn=110 spell
-
-highlight Comment cterm=italic
+highlight Comment cterm=italic gui=italic
 highlight WildMenu guifg=#1d1f21 guibg=#f0c674
 
 " vim-airline options
@@ -80,3 +75,11 @@ let g:ale_linters = {
 			\ }
 
 let g:tex_flavor = 'latex'
+
+autocmd FileType tex setl tw=110 cc=110 spell
+autocmd FileType markdown setl tw=110 cc=110 spell
+autocmd FileType c,h setl cc=80 tw=80
+autocmd FileType python setl ts=4 sw=4 cc=80 tw=80
+
+" include per-directory settings
+source $HOME/.vim/dirs.vimrc
