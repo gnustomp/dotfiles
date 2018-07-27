@@ -23,6 +23,8 @@ set pastetoggle=<F2>
 set splitbelow
 set splitright
 set fillchars+=vert:│
+set textwidth=110
+set colorcolumn=80,110
 
 let mapleader=','
 let maplocalleader='\\'
@@ -70,16 +72,16 @@ let g:ale_sign_error = '=>'
 let g:ale_sign_warning = '->'
 
 let g:ale_linters = {
-			\ 'c': ['gcc', 'cppcheck'],
-			\ 'cpp': ['gcc', 'cppcheck'],
+			\ 'c': ['clang-check', 'cppcheck'],
+			\ 'cpp': ['clang-check', 'cppcheck'],
 			\ }
 
 let g:tex_flavor = 'latex'
 
-autocmd FileType tex setl tw=110 cc=110 spell
-autocmd FileType markdown setl tw=110 cc=110 spell
-autocmd FileType c,h setl cc=80 tw=80
-autocmd FileType python setl ts=4 sw=4 cc=80 tw=80
+let g:gutentags_project_root = ['CMakeLists.txt']
+
+autocmd FileType tex,markdown setl spell
+autocmd FileType python setl ts=4 sw=4
 
 " include per-directory settings
 source $HOME/.vim/dirs.vimrc

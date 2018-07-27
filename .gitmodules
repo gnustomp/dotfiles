@@ -40,3 +40,6 @@
 [submodule ".vim/pack/gnustomp/start/neotex"]
 	path = .vim/pack/gnustomp/start/neotex
 	url = https://github.com/donRaphaco/neotex
+[submodule ".vim/pack/gnustomp/start/vim-gutentags"]
+	path = .vim/pack/gnustomp/start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags

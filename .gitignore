@@ -2,3 +2,4 @@
 .vim/dirs.vimrc
 *.sw[op]
 *~
+tags
