@@ -43,3 +43,33 @@
 [submodule ".vim/pack/gnustomp/start/vim-gutentags"]
 	path = .vim/pack/gnustomp/start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule ".vim/pack/gnustomp/start/vim-markdown"]
+	path = .vim/pack/gnustomp/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule ".vim/pack/gnustomp/start/gutentags_plus"]
+	path = .vim/pack/gnustomp/start/gutentags_plus
+	url = https://github.com/skywind3000/gutentags_plus
+[submodule ".vim/pack/gnustomp/start/LanguageClient-neovim"]
+	path = .vim/pack/gnustomp/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule ".vim/pack/gnustomp/start/deoplete-jedi"]
+	path = .vim/pack/gnustomp/start/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
+[submodule ".vim/pack/gnustomp/start/deoplete.nvim"]
+	path = .vim/pack/gnustomp/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule ".vim/pack/gnustomp/start/neco-syntax"]
+	path = .vim/pack/gnustomp/start/neco-syntax
+	url = https://github.com/Shougo/neco-syntax
+[submodule ".vim/pack/gnustomp/start/nvim-yarp"]
+	path = .vim/pack/gnustomp/start/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule ".vim/pack/gnustomp/start/vim-hug-neovim-rpc"]
+	path = .vim/pack/gnustomp/start/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule ".vim/pack/gnustomp/start/vim-pandoc"]
+	path = .vim/pack/gnustomp/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc
+[submodule ".vim/pack/gnustomp/start/vim-pandoc-syntax"]
+	path = .vim/pack/gnustomp/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
