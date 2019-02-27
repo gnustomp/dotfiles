@@ -34,6 +34,20 @@ highlight GitGutterAdd guifg=#8b9440
 highlight GitGutterChange guifg=#de935e
 highlight GitGutterDelete guifg=#a54242
 
+set clipboard+=unnamedplus
+let g:clipboard = {
+			\	'name': 'myClipboard',
+			\	'copy': {
+			\		'+': 'gpaste-client',
+			\		'*': 'gpaste-client',
+			\	},
+			\	'paste': {
+			\		'+': 'gpaste-client get 0',
+			\		'*': 'gpaste-client get 0',
+			\	},
+			\	'cache_enabled': 1,
+			\}
+
 nnoremap <c-]> g<c-]>
 vnoremap <c-]> g<c-]>
 
@@ -80,10 +94,10 @@ let g:ale_sign_warning = '->'
 let g:ale_c_gcc_options = '-std=gnu11 -Wall'
 
 let g:ale_linters = {
-			\ 'c': ['gcc', 'cppcheck'],
-			\ 'cpp': ['gcc', 'cppcheck'],
-			\ 'python': ['flake8'],
-			\ }
+			\	'c': ['gcc', 'cppcheck'],
+			\	'cpp': ['gcc', 'cppcheck'],
+			\	'python': ['flake8'],
+			\}
 
 let g:tex_flavor = 'latex'
 
@@ -96,7 +110,7 @@ let g:deoplete#enable_at_startup = 1
 let g:vim_markdown_fenced_languages = ['py=python']
 
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#modules#disabled = ['folding']
 
 autocmd FileType tex,markdown setl spell
 autocmd FileType markdown setl ts=4 sw=4 et
