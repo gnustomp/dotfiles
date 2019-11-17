@@ -1,10 +1,24 @@
 " colour options
+" fix for colours in tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set bg=dark
 set termguicolors
 colo hybrid
 
+" cursor switching
+if !has('nvim')
+	let &t_SI = "\<Esc>[6 q"
+	let &t_SR = "\<Esc>[4 q"
+	let &t_EI = "\<Esc>[2 q"
+endif
+
 syntax on
 filetype plugin indent on
+
+" gui settings
+set guioptions=i
+set guifont=Source\ Code\ Pro\ 10
 
 " indent settings
 set smartindent
@@ -34,7 +48,7 @@ highlight GitGutterAdd guifg=#8b9440
 highlight GitGutterChange guifg=#de935e
 highlight GitGutterDelete guifg=#a54242
 
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 let g:clipboard = {
 			\	'name': 'myClipboard',
 			\	'copy': {
@@ -45,7 +59,6 @@ let g:clipboard = {
 			\		'+': 'gpaste-client get 0',
 			\		'*': 'gpaste-client get 0',
 			\	},
-			\	'cache_enabled': 1,
 			\}
 
 nnoremap <c-]> g<c-]>
@@ -82,7 +95,9 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#wordcount#filetypes = ['help', 'markdown', 'rst', 'org', 'text', 'asciidoc', 'tex', 'mail', 'pandoc']
+let g:airline#extensions#wordcount#filetypes = [
+			\	'help', 'markdown', 'rst', 'org', 'text', 'asciidoc', 'tex', 'mail', 'pandoc'
+			\]
 
 " tmuxline options
 let g:tmuxline_preset = 'full'
@@ -106,6 +121,9 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_auto_add_gtags_cscope = 0
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#ignore_sources = {
+			\	'_': ['buffer', 'around']
+			\}
 
 let g:vim_markdown_fenced_languages = ['py=python']
 
