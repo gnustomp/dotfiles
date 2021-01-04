@@ -48,7 +48,7 @@
 	url = https://github.com/autozimu/LanguageClient-neovim
 [submodule ".vim/pack/gnustomp/start/deoplete-jedi"]
 	path = .vim/pack/gnustomp/start/deoplete-jedi
-	url = https://github.com/zchee/deoplete-jedi
+	url = https://github.com/deoplete-plugins/deoplete-jedi
 [submodule ".vim/pack/gnustomp/start/deoplete.nvim"]
 	path = .vim/pack/gnustomp/start/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
